@@ -5,6 +5,7 @@ const Cors = require('@koa/cors')
 const BodyParser = require('koa-bodyparser')
 const Helmet = require('koa-helmet')
 const respond = require('koa-respond')
+const mongoose = require('mongoose')
 
 const app = new Koa()
 const router = new Router()
@@ -31,5 +32,10 @@ app.use(respond())
 require('./routes')(router)
 app.use(router.routes())
 app.use(router.allowedMethods())
+
+// Obviously, don't hard code and check in credentials in a real application. :)
+mongoose.connect(
+  'mongodb+srv://todo-app-db:JmDRZowIPQgJ8cw1@todo-tutorial-mftza.mongodb.net/test?retryWrites=true', 
+  { useNewUrlParser: true })
 
 module.exports = app
