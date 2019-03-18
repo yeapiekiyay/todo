@@ -37,6 +37,8 @@ require('./routes')(router)
 app.use(router.routes())
 app.use(router.allowedMethods())
 
+app.use(require('koa-static')('./build'))
+
 mongoose.connect(
   `mongodb+srv://${dbUsername}:${dbPassword}@todo-tutorial-mftza.mongodb.net/test?retryWrites=true`, 
   { useNewUrlParser: true })
