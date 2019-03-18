@@ -1,0 +1,26 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scale-able todo app. Built for learning purposes.",
+  "main": " ",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeapiekiyay/todo.git"
+  },
+  "author": "Michael Yeaple <michael@yeapleinnovations.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/yeapiekiyay/todo/issues"
+  },
+  "homepage": "https://github.com/yeapiekiyay/todo#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
