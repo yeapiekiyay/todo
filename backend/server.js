@@ -10,6 +10,10 @@ const mongoose = require('mongoose')
 const app = new Koa()
 const router = new Router()
 
+// mongo db creds
+const dbUsername = process.env.DB_USERNAME
+const dbPassword = process.env.DB_PASSWORD
+
 app.use(Helmet())
 
 if (process.env.NODE_ENV === 'development') {
@@ -33,9 +37,8 @@ require('./routes')(router)
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-// Obviously, don't hard code and check in credentials in a real application. :)
 mongoose.connect(
-  'mongodb+srv://todo-app-db:JmDRZowIPQgJ8cw1@todo-tutorial-mftza.mongodb.net/test?retryWrites=true', 
+  `mongodb+srv://${dbUsername}:${dbPassword}@todo-tutorial-mftza.mongodb.net/test?retryWrites=true`, 
   { useNewUrlParser: true })
 
 module.exports = app
