@@ -10,14 +10,14 @@ body { background: cornflowerblue; }
 .form { margin-bottom: 50px;}
 
 .App {
-text-align: center;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .full-column {
-display: flex;
-flex: 1;
-flex-direction: column;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
